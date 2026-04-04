@@ -1,46 +1,52 @@
 # 🐧 Module 01: Linux Basics for DevOps
 
-Linux is the backbone of almost all DevOps tools, from Docker to Kubernetes. mastering the terminal is your first step.
+Linux is the absolute backbone of DevOps. Whether you're configuring a server, building a Docker image, or managing a Kubernetes node, you are interacting with Linux.
 
-## 🔑 Key Concepts to Revise
+## 🚀 Core Pillars of Linux
+### 1. File System Hierarchy
+- `/etc`: Configuration files (e.g., `nginx.conf`, `hosts`).
+- `/var/log`: System and application logs.
+- `/home`: User directories.
+- `/root`: Home directory for the superuser.
+- `/bin` & `/sbin`: Executable binaries.
 
-- [ ] **File Permissions**: `chmod`, `chown`, `umask`.
-- [ ] **Package Management**: `apt`, `yum`, `dnf`.
-- [ ] **Process Management**: `ps`, `top`, `htop`, `kill`, `bg`, `fg`.
-- [ ] **Networking**: `ifconfig`, `ip addr`, `netstat`, `nslookup`, `curl`, `wget`.
-- [ ] **File Operations**: `ls`, `cd`, `mkdir`, `rm`, `cp`, `mv`, `find`, `grep`, `awk`, `sed`.
-- [ ] **SSH & Key Management**: `ssh-keygen`, `ssh-copy-id`, `.ssh/config`.
+### 2. Essential CLI Cheat Sheet
+- **Navigation**: `pwd`, `ls -lah`, `cd -` (go back to previous dir).
+- **File Manipulation**: `touch`, `mkdir -p` (create nested dirs), `cp -r`, `mv`, `rm -rf`.
+- **Content Viewing**: `cat`, `less`, `head`, `tail -f` (follow logs in real-time).
+- **Search**: `find / -name "config.yaml"`, `grep -ri "error" /var/log/`.
+
+### 3. Permissions & Ownership (`chmod`, `chown`)
+- **Reading Permissions**: `rwx r-x r--` (754)
+- **Changing Permissions**: `chmod 755 script.sh`
+- **Changing Ownership**: `sudo chown root:root file.txt`
+
+### 4. Process & Resource Management
+- **Monitor**: `top`, `htop` (interactive monitor), `ps aux`.
+- **Control**: `kill -9 <PID>`, `nice`, `renice`.
+- **Systemd**: `systemctl start/stop/status/restart/enable nginx`.
 
 ---
 
 ## 🛠️ Hands-on Exercises
-
-1. **Exercise 1**: Create a shell script to automate user creation and directory structure setup.
-2. **Exercise 2**: Use `grep` and `awk` to extract specific IP addresses from a large log file.
-3. **Exercise 3**: Set up password-less SSH between two Linux instances (or VMs).
+1. **Automation**: Write a script that checks if `nginx` is running; if not, restart it and log the event.
+2. **Analysis**: Use `awk` to print only the second column of a CSV file.
+3. **Networking**: Check which ports are listening using `netstat -tulnp` or `ss -lntp`.
 
 ---
 
 ## ❓ Interview Questions
-
 > [!IMPORTANT]
-> **Q1: Explain the difference between Hard Links and Soft Links.**
-> *A: Soft links (symbolic) point to the filename, while hard links point to the inode (actual data). If the original file is deleted, a soft link breaks, but a hard link remains valid.*
+> **Q1: What is the difference between a Process and a Thread?**
+> *A: A process is an independent program execution with its own memory space. A thread is a subset of a process that shares the same memory space, making it lighter and faster to create.*
 
 > [!TIP]
-> **Q2: How do you check if a port is open on a remote server?**
-> *A: Use `nc -vz <ip> <port>` or `telnet <ip> <port>`.*
+> **Q2: How do you find and delete files older than 30 days?**
+> *A: `find /path/to/files -type f -mtime +30 -delete`*
 
 ---
 
 ## 📚 Resources
-
-| Resource | Link |
-| :--- | :--- |
-| Linux Journey | [https://linuxjourney.com/](https://linuxjourney.com/) |
-| OverTheWire (Wargames) | [https://overthewire.org/wargames/](https://overthewire.org/wargames/) |
-| Linux Survival | [https://linuxsurvival.com/](https://linuxsurvival.com/) |
-
----
-
-*Keep iterating and practicing commands!*
+- [Linux Journey](https://linuxjourney.com/)
+- [The Linux Command Line (PDF)](https://linuxcommand.org/tlcl.php)
+- [Explainshell.com](https://explainshell.com/) (Great for deconstructing complex commands)
