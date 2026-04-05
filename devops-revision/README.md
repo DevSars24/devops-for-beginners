@@ -1,4 +1,4 @@
-# 🚀 DevOps Mastery Revision Guide
+o# 🚀 DevOps Mastery Revision Guide
 
 Welcome to your DevOps Revision series! This repository is designed to help you master the core pillars of DevOps, from foundational cloud concepts to advanced orchestration and monitoring.
 
@@ -40,4 +40,4 @@ To become a proficient DevOps engineer, we'll cover the following modules. Each 
 > [!TIP]
 > Use the command `git checkout -b feature/revision-session` to keep your revision branch separate from main!
 
-Generated with ❤️ by your AI Coding Assistant.
+
