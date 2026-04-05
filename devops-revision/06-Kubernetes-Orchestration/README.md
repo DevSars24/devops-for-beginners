@@ -1,55 +1,48 @@
-# 🚢 Module 06: Kubernetes Orchestration
+# 🚢 Module 06: Kubernetes (K8s) Orchestration
 
-Docker is for building containers; Kubernetes is for managing them at scale. It handles automated deployment, scaling, and management of containerized applications.
+While Docker is used to build and package containers, **Kubernetes** is the industry standard for managing them at scale. Kubernetes automates the deployment, scaling, and operational management of containerized applications across a cluster of servers.
 
-## 🏗️ Kubernetes Cluster Components
-### 1. Control Plane (The "Brain")
-- **API Server**: Central gateway that processes all requests.
-- **Etcd**: Key-value store (the entire "memory" of the cluster).
-- **Scheduler**: Decides which pods run on which nodes.
-- **Controller Manager**: Maintains the desired state (e.g., if a pod crashes, restart it).
+## 🏗️ Kubernetes Cluster Architecture
+Welcome to the Kubernetes Mastery section. This module covers everything from basic cluster architecture and pod development to advanced scaling, networking, and persistent storage management.
 
-### 2. Worker Nodes (The "Execution")
-- **Kubelet**: The "Agent" on each node that talks to the control plane.
-- **Kube-proxy**: Handles networking and routing for the pods.
-- **Pods**: The smallest deployable units in K8s (it contains one or more containers).
+## 📖 Detailed Revision Guides
 
----
+To master Kubernetes, follow these high-quality, professional guides in order:
 
-## 🔑 Crucial K8s Objects
-| Object | Description | Analogy |
-| :--- | :--- | :--- |
-| **Pods** | Encapsulation of one or more containers. | A single shipping container. |
-| **Deployment** | Manages the creation and scaling of pods. | The management of a fleet of containers. |
-| **Service** | Provides a stable network IP/address for pods. | The "Receptionist" routing traffic. |
-| **Ingress** | Rules to manage external traffic for services. | The "Main Gate" of a hotel. |
-| **ConfigMaps/Secrets** | Store configuration/sensitive data separately. | Environment variables for the apps. |
+1. **[01-K8s-Introduction-Architecture](./01-K8s-Introduction-Architecture.md)**: Understanding the Control Plane, Worker Nodes, and the "Brain" of the cluster.
+2. **[02-K8s-Pods-Workloads](./02-K8s-Pods-Workloads.md)**: Mastering Pods, Deployments, and ReplicaSets for declarative updates.
+3. **[03-K8s-Installation-KinD](./03-K8s-Installation-KinD.md)**: Setting up a local, multi-node Kubernetes cluster using KinD.
+4. **[04-K8s-Services-Networking](./04-K8s-Services-Networking.md)**: Implementing ClusterIP, NodePort, LoadBalancer, and Ingress routing.
+5. **[05-K8s-Config-Secrets](./05-K8s-Config-Secrets.md)**: Managing application configuration with ConfigMaps and Secrets.
+6. **[06-K8s-Scaling-Resources](./06-K8s-Scaling-Resources.md)**: Optimizing resource requests/limits and implementing Horizontal Pod Autoscaling (HPA).
+7. **[07-K8s-Storage-Mastery](./07-K8s-Storage-Mastery.md)**: Mastering PersistentVolumes, Claims, and Dynamic Storage Provisioning.
 
 ---
 
-## 🛠️ Most-Used Kubectl Commands
-- `kubectl get pods`: List all running pods in the current namespace.
-- `kubectl get nodes`: Check the health of cluster nodes.
-- `kubectl apply -f manifest.yaml`: Create or update resources via a YAML file.
-- `kubectl describe pod <name>`: Get detailed info about a specific pod (great for debugging!).
-- `kubectl logs <pod-name>`: See the stdout/stderr logs of a pod.
-- `kubectl exec -it <pod-name> -- bash`: Jump into a container inside a pod.
+## 🛠️ Hands-on Concepts to Practice
+
+- [ ] Deploy a multi-replica Nginx application using a Deployment.
+- [ ] Expose a service internally (ClusterIP) and externally (NodePort).
+- [ ] Implement a **Liveness Probe** to detect and restart unhealthy pods.
+- [ ] Use a **ConfigMap** to inject environment variables into your application.
+- [ ] Scale a deployment manually (`kubectl scale`) and automatically (`kubectl autoscale`).
 
 ---
 
-## ❓ Interview Questions
-> [!IMPORTANT]
-> **Q1: Explain the difference between a Headless Service and a standard ClusterIP.**
-> *A: A standard ClusterIP service provides a single IP address and load balances across pods. A Headless Service doesn't have an IP; it returns the IP addresses of the underlying pods directly via DNS (useful for stateful sets).*
+## 🎤 Interview Preparation: Kubernetes Mastery
 
-> [!TIP]
-> **Q2: What is the "Desired State" in Kubernetes?**
-> *A: You define how your app should look (e.g., 5 copies running), and K8s constantly works to match the "Actual State" with the "Desired State."*
+Each sub-guide above contains a **"Cracking the Interview"** section with targeted questions. Common topics include:
+- The Kubernetes "Control Plane" components.
+- The difference between a Deployment and a StatefulSet.
+- How Kubernetes handles zero-downtime rolling updates.
+- Managing persistent data in an ephemeral environment.
 
 ---
 
-## 📚 Resources
+## 📚 Official Resources
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
-- [K3s (Lightweight K8s)](https://k3s.io/)
-- [Minikube (Local cluster)](https://minikube.sigs.k8s.io/)
 - [Kubernetes Academy by VMware](https://kubernetes.academy/)
+- [Kexplore (Interactive Visualization)](https://kexplore.io/)
+- [K8s.af (Kubernetes Failure Stories)](https://k8s.af/)
+- [Interactive Kubernetes Tutorials (Katacoda replacement)](https://killercoda.com/)
+- [Certified Kubernetes Administrator (CKA) Guide](https://github.com/walidshaari/Kubernetes-Certified-Administrator)
